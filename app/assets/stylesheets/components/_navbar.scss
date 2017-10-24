@@ -1,0 +1,21 @@
+.wrapper-navbar {
+  width: 100%;
+  background: $blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 250px;
+}
+
+.navbar-brand {
+  flex: 0 1 800px;
+  font-size: 44px;
+  font: $header-font;
+  color: $white-cloud;
+}
+
+.fa-cloud {
+ font-size: 74px;
+ color: $white-cloud;
+}
+
