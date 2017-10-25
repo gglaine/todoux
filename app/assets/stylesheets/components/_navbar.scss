@@ -1,21 +1,33 @@
-.wrapper-navbar {
-  width: 100%;
-  background: $blue;
+
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 250px;
+  background: $white-cloud;
 }
 
 .navbar-brand {
   flex: 0 1 800px;
+  text-align: center;
   font-size: 44px;
-  font: $header-font;
-  color: $white-cloud;
+  font-family: $header-font;
+  color: $white;
+}
+
+.navbar-tagline {
+  font-size: 20px;
+  color: $white;
+  font-family: $header-font;
+}
+
+.navbar-logo {
+  flex: 0 1 800px;
+  text-align: center;
+  color: $white;
 }
 
 .fa-cloud {
  font-size: 74px;
- color: $white-cloud;
+ color: $white;
 }
 

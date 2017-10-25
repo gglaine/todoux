@@ -2,10 +2,10 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url('https://fonts.googleapis.com/css?family=Playfair|Lato|Montserrat|Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Cabin:600|Dosis|Playfair|Lato|Montserrat|Playfair+Display|Vast+Shadow');
 
-$base-font: "Playfair", "Helvetica", "sans-serif";
-$header-font: "Montserrat", "Helvetica", "sans-serif";
+$base-font: "Cabin", "Playfair", "Helvetica", "sans-serif";
+$header-font: "Dosis", "Montserrat", "Helvetica", "sans-serif";
 
 
 $black: #0E0E0E;
@@ -16,6 +16,7 @@ $lighter-gray: #D9DADC;
 
 $red-gold: #FFD700;
 $green: #62C370;
+$green-fresh: #50ff81;
 $light-green: #CDDEA6;
 $lighter-green: #2A9D8F;
 
@@ -23,6 +24,8 @@ $yellow: #f3d506;
 $bright-yellow: #EAD94C;
 
 $orange: #FF9000;
+
+$lighter-pink: #ff80b2;
 
 
 $white-cloud: #70a1ef;

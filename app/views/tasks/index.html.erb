@@ -1,6 +1,40 @@
-<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-<% @tasks.each do |t| %>
-  <ul>
-    <li><p><%= t.name %></p></li>
-  </ul>
-<% end %>
+
+<div class="wrapper-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="card card-new-task text-center">
+          <%= render "tasks/form", locals: {task: @task} %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <% @tasks.each do |t| %>
+          <div class="task-card d-flex justify-content-start">
+            <div class="task-card-status">
+              <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+            </div>
+            <div class="task-card-name d-flex justify-content-center">
+              <%= t.name %>
+            </div>
+            <div class="task-card-controls ml-auto p-2 ">
+              <ul>
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <%= link_to task_path(t.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                <% end %>
+
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
