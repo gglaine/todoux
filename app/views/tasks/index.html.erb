@@ -21,15 +21,19 @@
             <div class="task-card-controls ml-auto p-2 ">
               <ul>
               <%= link_to markit_url(t), method: :put do %>
-                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                <% if t.done %>
+                    <i class="fa fa-check-circle red " aria-hidden="true"></i>
+                    You Did It
+                <% else %>
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                <% end %>
+
               <% end %>
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                <%= link_to task_path(t.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+
+                <%= link_to task_path(t.id), method: :delete, data: { confirm: 'Vraiment ?' } do %>
                   <i class="fa fa-trash" aria-hidden="true"></i>
                 <% end %>
-                <% if t.done %>
-                    <h5>You didit !</h5>
-                <% end %>
+
 
               </ul>
             </div>
