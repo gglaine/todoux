@@ -8,6 +8,10 @@ root to: "welcome#index"
 
 resources :users
 
+
+match '/tasks/mark_as_done/:id' => 'tasks#mark_as_done!', as: 'markit', via: :put
+
 resources :tasks
+
 
 end
