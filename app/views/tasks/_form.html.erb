@@ -1,4 +1,4 @@
-<%= simple_form_for :task do |f| %>
+<%= simple_form_for :task, remote: true do |f| %>
   <%= f.input :name, placeholder: 'i\'m gonna Doux this .. ', label: false %>
   <div class="my-button">
     <%= f.button :submit, 'Doux IT'  %>
