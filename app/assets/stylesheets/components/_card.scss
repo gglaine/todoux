@@ -1,3 +1,11 @@
+.card {
+  display: flex;
+  align-items: center;
+  height: 300px;
+  justify-content: space-around;
+}
+
+
 .card-welcome {
   min-height: 200px;
   margin: 10px;
