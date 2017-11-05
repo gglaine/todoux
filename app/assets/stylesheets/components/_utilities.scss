@@ -13,25 +13,38 @@
 
 
 .wrapper-blue {
-  background: $light-blue;
+  background: $blue;
 }
 
 .wrapper-green {
-  background: green;
+  background: $light-green;
 }
 
 .full-viewport {
-  height: 100vh;
+  height: calc(100vh - 80px);
 }
 
 .btn-blue {
-  background: $light-blue;
-  padding: 20px;
-  opacity: 0.8;
+  background: $blue;
+  padding: 10px 10px 4px 10px;
+  opacity: 0.72;
+  border: 2px solid #6DA2E9;
+  border-radius: 10px 10px 10px 10px;
   border: 2px solid $light-blue;
 
   h4 {
-    color: white;
-    font-size: 32px;
+    color: $white;
+    font-size: 22px;
+  }
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  h5 {
+    font-size: 12px;
+    color: $dark-gray;
   }
 }

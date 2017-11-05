@@ -3,7 +3,7 @@
   align-items: center;
   height: 300px;
   justify-content: space-around;
-  opacity: 0.58;
+  opacity: 0.88;
 }
 
 .card-fullwidth {
@@ -27,8 +27,8 @@
 }
 
 #homesplash {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('sea-turtle.jpg');
-  background-repeat: none;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('paresseux.jpg');
+  background-repeat: no-repeat;
   background-position: center;
   background-image-width: 100% !important;
   img {
@@ -58,9 +58,9 @@
   align-items: center;
   padding-top: 20px;
 
-  height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('plop.jpg');
-  background-repeat: none;
+  height: calc(80vh - 70px);
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('sloth.jpg');
+  background-repeat: no-repeat;
   background-position: center;
   background-image-width: 100% !important;
   .form-control {
@@ -71,7 +71,7 @@
      height: 300px;
   }
   .btn {
-    background: $white-cloud;
+    background: $light-blue;
     border-radius: 50%;
     width: 120px;
     height: 120px;
