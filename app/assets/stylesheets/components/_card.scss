@@ -3,6 +3,46 @@
   align-items: center;
   height: 300px;
   justify-content: space-around;
+  opacity: 0.58;
+}
+
+.card-fullwidth {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+    :hover {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3));
+  }
+}
+
+.card-fullwidth button {
+  flex: 0 0 auto;
+}
+
+.card .btn-success {
+  opacity: 1;
+
+  width: 200px;
+}
+
+#homesplash {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('sea-turtle.jpg');
+  background-repeat: none;
+  background-position: center;
+  background-image-width: 100% !important;
+  img {
+    max-width: 100%;
+  }
+
+}
+
+#task-form {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('plop.jpg');
+  background-repeat: none;
+  background-position: center;
+  background-image-width: 100% !important;
+
 }
 
 
@@ -17,8 +57,12 @@
   display: flex;
   align-items: center;
   padding-top: 20px;
-  background: $green-fresh;
-  height: 40vh;
+
+  height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('plop.jpg');
+  background-repeat: none;
+  background-position: center;
+  background-image-width: 100% !important;
   .form-control {
     flex: 0 1 50%;
   }

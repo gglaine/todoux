@@ -2,7 +2,6 @@
   width: 100% !important;
   margin: 0px auto ;
   background: $blue;
-  height: 350px;
 }
 
 
@@ -10,4 +9,29 @@
 .wrapper-white {
   width: 100% !important;
   height: 500px;
+}
+
+
+.wrapper-blue {
+  background: $light-blue;
+}
+
+.wrapper-green {
+  background: green;
+}
+
+.full-viewport {
+  height: 100vh;
+}
+
+.btn-blue {
+  background: $light-blue;
+  padding: 20px;
+  opacity: 0.8;
+  border: 2px solid $light-blue;
+
+  h4 {
+    color: white;
+    font-size: 32px;
+  }
 }

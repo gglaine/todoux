@@ -2,10 +2,11 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url('https://fonts.googleapis.com/css?family=Cabin:600|Dosis|Playfair|Lato|Montserrat|Playfair+Display|Vast+Shadow');
+@import url('https://fonts.googleapis.com/css?family=Modak|Cabin:600|Dosis|Playfair|Lato|Montserrat|Playfair+Display|Vast+Shadow');
 
 $base-font: "Cabin", "Playfair", "Helvetica", "sans-serif";
 $header-font: "Dosis", "Montserrat", "Helvetica", "sans-serif";
+$puffy-font: "Modak", "cursive";
 
 
 $black: #0E0E0E;
@@ -29,4 +30,4 @@ $lighter-pink: #ff80b2;
 
 
 $white-cloud: #70a1ef;
-$light-blue: #3F88C5;
+$light-blue: #6DA2E9;
