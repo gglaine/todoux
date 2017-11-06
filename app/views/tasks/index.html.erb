@@ -1,19 +1,19 @@
 
-<div class="wrapper-green">
-  <div class="container">
+<div class="wrapper-white">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-md-12">
+      <div class="col-xs-12 col-md-4">
+
         <div class="card card-new-task text-center">
+
           <%= render "tasks/form", locals: {task: @task} %>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-<div class="wrapper-white">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-12">
+      <div class="col-xs-12 col-md-8">
+        <div class="card mini">
+              <h5 class="text-center">Vous avez <%= Task.all.count %> taches en cours </h5>
+        </div>
+
         <% @tasks.each do |t| %>
           <div class="task-card d-flex justify-content-start">
             <div class="task-card-status">
