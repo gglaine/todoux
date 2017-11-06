@@ -2,14 +2,17 @@
 <div class="wrapper-white">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-md-4">
-
+      <div class="col-xs-12 col-md-6">
         <div class="card card-new-task text-center">
-
           <%= render "tasks/form", locals: {task: @task} %>
         </div>
+        <% if Task.all.count > 5 %>
+            <h5>You're doing good ! </h5>
+        <% end %>
+
+        <h5>Taches effectuées : <%= done_tasks.count %> </h5>
       </div>
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-12 col-md-6">
         <div class="card mini">
               <h5 class="text-center">Vous avez <%= Task.all.count %> taches en cours </h5>
         </div>
@@ -31,21 +34,17 @@
                 <% else %>
                     <i class="fa fa-check-circle" aria-hidden="true"></i>
                 <% end %>
-
               <% end %>
-
                 <%= link_to task_path(t.id), method: :delete, data: { confirm: 'Vraiment ?' } do %>
                   <i class="fa fa-trash" aria-hidden="true"></i>
                 <% end %>
-
-
               </ul>
             </div>
           </div>
         <% end %>
       </div>
-    </div>
 
+    </div>
   </div>
 </div>
 
