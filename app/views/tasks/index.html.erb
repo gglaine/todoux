@@ -3,14 +3,19 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 col-md-6">
+        <% if Task.all.count > 5 %>
+        <h5></h5>
+          <h5 class="text-center">You're Douxing good ! </h5>
+        <% end %>
         <div class="card card-new-task text-center">
+
           <%= render "tasks/form", locals: {task: @task} %>
         </div>
-        <% if Task.all.count > 5 %>
-            <h5>You're doing good ! </h5>
-        <% end %>
-
+        <div class="card-dashboard">
         <h5>Taches effectuées : <%= done_tasks.count %> </h5>
+        </div>
+
+
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="card mini">
