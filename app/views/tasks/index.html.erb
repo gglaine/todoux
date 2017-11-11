@@ -1,27 +1,29 @@
 
-<div class="wrapper-white">
+<div class="wrapper-white" id="wrapper-bamboo">
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        <% if Task.all.count > 5 %>
-        <h5></h5>
-          <h5 class="text-center">You're Douxing good ! </h5>
-        <% end %>
-        <div class="card card-new-task text-center">
 
+        <div class="card card-new-task text-center">
           <%= render "tasks/form", locals: {task: @task} %>
         </div>
-        <div class="card-dashboard">
-        <h5>Taches effectuées : <%= done_tasks.count %> </h5>
+        <div class="card-dashboard blue-background">
+          <ul>
+            <li>
+              <p><%= Task.all.count %> tâches en cours </p>
+            </li>
+            <li>
+              <p><%= done_tasks.count %> tâches effectuées </p>
+            </li>
+          </ul>
         </div>
-
-
       </div>
       <div class="col-xs-12 col-md-6">
-        <div class="card mini">
-              <h5 class="text-center">Vous avez <%= Task.all.count %> taches en cours </h5>
+        <div class="card-dashboard blue-background">
+          <p> <%= react_to_workload %> </p>
+          <p> <%= time_tag Time.current %></p>
+          <p> <%= completed_tasks_percentage %> % de taches effectuées</p>
         </div>
-
         <% @tasks.each do |t| %>
           <div class="task-card d-flex justify-content-start">
             <div class="task-card-status">
@@ -35,7 +37,6 @@
               <%= link_to markit_url(t), method: :put do %>
                 <% if t.done %>
                     <i class="fa fa-check-circle red " aria-hidden="true"></i>
-                    You Did It
                 <% else %>
                     <i class="fa fa-check-circle" aria-hidden="true"></i>
                 <% end %>
@@ -47,6 +48,18 @@
             </div>
           </div>
         <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper-green">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+
+
+
       </div>
 
     </div>

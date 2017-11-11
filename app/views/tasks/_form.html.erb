@@ -1,10 +1,11 @@
-
-  <%= simple_form_for :task, remote: true do |f| %>
-    <%= f.input :name, placeholder: 'Doux this ... later ', label: false %>
+<div>
+  <%= simple_form_for :task, wrapper: :inline_form, html: { class: 'form-inline' }, remote: true do |f| %>
+    <%= f.input :name, placeholder: 'I got ToDoux This ', label: false %>
     <div class="my-button">
       <%= f.button :submit, 'Doux it !'  %>
     <!--       <i class="fa fa-cloud" aria-hidden="true"></i> -->
 
     </div>
   <% end %>
+</div>
 

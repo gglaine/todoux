@@ -55,14 +55,16 @@
 
 .card-new-task {
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding-top: 20px;
-  height: 300px;
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),url('sloth-down.png');
+  height: 200px;
+  background-image: linear-gradient(-225deg, rgba(0, 101, 168, 0.6) 0%, rgba(0, 36, 61, -1.7)10%), url(sloth-down.png);
   background-repeat: no-repeat;
   background-position: center;
+  margin-bottom: 10px;
   margin-top: 10px;
-  background-image-width: 100% !important;
   .form-control {
     flex: 0 1 50%;
   }
@@ -72,12 +74,13 @@
   }
   .btn {
     background: $green-button;
-    border-radius: 50%;
+    border-radius: 4px;
     width: 120px;
     opacity: 0.8;
-    height: 120px;
-    color: $white;
-    font-size: 22px;
+    height: 39px;
+    margin: 4Px;
+    color: #fff;
+    font-size: 16px;
   }
   .btn:hover {
     opacity: 1;
@@ -88,7 +91,7 @@
 .task-card {
   display: flex;
   align-items: center;
-  padding: 4px 4px 4px 10px;
+  padding: 4px 4px 4px 8px;
   // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -110,6 +113,8 @@
 
 .task-card-controls {
   justify-content: end;
+      margin: 0px;
+    max-height: 32px;
   .fa {
     margin-right: 10px;
   }
@@ -137,7 +142,14 @@
 
 
 .card-dashboard {
-  border: 2px solid silver;
   padding: 30px;
+  border-radius: 12px;
+  color: #fdefef;
 }
 
+
+
+
+.blue-background {
+  background: rgba(94, 136, 241, 0.84);
+}
