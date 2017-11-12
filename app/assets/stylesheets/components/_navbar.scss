@@ -11,14 +11,16 @@
   // flex: 0 1 100px;
   font-family: $header-font;
   font-style: italic;
+  display: inline;
 }
 
 .navbar-brand {
-  flex: 0 1 auto;
-  text-align: center;
-  font-size: 44px;
+  flex: 0 0 300px;
+  text-align: left;
+  font-size: 32px;
   font-family: $header-font;
   color: $white;
+  flex: 0 0 auto;
   h6 {
     margin-top: -10px;
     text-decoration: underline;
@@ -26,15 +28,17 @@
 }
 
 .navbar img {
-    width: 50px;
-    display: block;
+  width: 50px;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .navbar-tagline {
-  font-size: 20px;
+  font-size: 26px;
   color: $white;
   font-family: $header-font;
-  flex: 0 0 auto;
+  // flex: 0 0 auto;
+  flex: 0 1 650px;
 }
 
 .navbar-tagline img {

@@ -1,5 +1,10 @@
 module TasksHelper
 # tasks = Task.all
+#
+  def ongoing_tasks
+    @tasks.reject { |task| task["done"] }
+  end
+
   def done_tasks
     @tasks.select { |task| task["done"] }
   end
@@ -7,9 +12,9 @@ module TasksHelper
   def react_to_workload
     count = @tasks.count
 
-    cool =  "Cool raoul !"
-    chill = "I think you should Chill Bill !"
-    naptime = "Et si on faisait une sieste"
+    cool =  "Tout est OKLM !"
+    chill = "Le repos c'est la santé !"
+    naptime = "Et si on faisait une sieste !"
 
     case count
       when 0..5
@@ -17,7 +22,7 @@ module TasksHelper
       when 6..10
         return chill
       when 11..15
-        return nap
+        return naptime
     end
   end
 

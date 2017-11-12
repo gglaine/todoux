@@ -142,14 +142,31 @@
 
 
 .card-dashboard {
-  padding: 30px;
+  position: relative;
+  padding: 20px;
   border-radius: 12px;
   color: #fdefef;
+  margin-bottom: 10px;
 }
 
+#stats-wiki h5 {
+  font-size: 14px;
+}
 
+.time-visualize-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
 
 
 .blue-background {
   background: rgba(94, 136, 241, 0.84);
+}
+
+.green-background {
+  background: rgba(67, 148, 83, 0.84);
+}
+.red-background {
+  background: rgba(27, 29, 16, 0.84);
 }
