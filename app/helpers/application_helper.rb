@@ -1,6 +1,5 @@
 module ApplicationHelper
   def time_greeting
-    user = "Guillaume"
     gday = "Bonjour"
     night = "Bonne nuit"
 
