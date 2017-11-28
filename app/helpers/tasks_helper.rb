@@ -34,4 +34,5 @@ module TasksHelper
     return percentage.to_i
   end
 
+
 end

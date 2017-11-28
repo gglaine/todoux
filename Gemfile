@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'simple_form'
 
+gem 'rest-client'
+
 
 
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
@@ -47,6 +49,9 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
+  gem 'open-weather'
+  gem 'rspec-rails'
 end
 
 group :development do
