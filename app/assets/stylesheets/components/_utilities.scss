@@ -1,7 +1,16 @@
 .wrapper-navbar {
-  width: 100% !important;
-  margin: 0px auto ;
-  background: $blue;
+    width: 100% !important;
+    margin: 0px auto;
+    /* height: 53px; */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background: rgba(94, 136, 241, 0.84);
+}
+
+.wrapper-footer {
+
 }
 
 
@@ -12,8 +21,16 @@
 }
 
 #wrapper-bamboo {
-  background-image: linear-gradient(-225deg, rgba(0, 101, 168, 0.6) 0%, rgba(0, 36, 61, -1.7)10%), url(bamboo.jpg);
-
+background-image: linear-gradient(-225deg, rgba(0, 101, 168, 0.6) 0%, rgba(0, 36, 61, 0.4) 10%), url(bamboo.jpg);
+    /* position: absolute; */
+    /* top: 0px; */
+    padding-top: 100px;
+  .task-name {
+    width: 100%;
+  }
+  .form-control {
+    flex: 0 1 98%;
+  }
 }
 
 .wrapper-blue {
@@ -51,4 +68,8 @@ footer {
     font-size: 12px;
     color: $dark-gray;
   }
+}
+
+#dunnit .task-card {
+  background: #DE5054;
 }

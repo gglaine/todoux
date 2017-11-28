@@ -2,32 +2,53 @@
 <div class="wrapper-white" id="wrapper-bamboo">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-md-6">
-
+      <div class="col-xs-12 col-md-12">
         <div class="card card-new-task text-center">
           <%= render "tasks/form", locals: {task: @task} %>
         </div>
+      </div>
+
+    </div>
+    <div class="row">
+<div class="col-xs-12 col-md-6">
+        <div class="card-dashboard blue-background">
+          <p> <%= DateTime.current.strftime("%m/%d/%Y") %> - <%= DateTime.current.strftime("%HH%M") %></p>
+
+
+          <div class="time-visualize-icon">
+            <% if time_greeting === "Bonne nuit" %>
+              <i class="fa fa-moon-o" aria-hidden="true"></i>
+              <% elsif time_greeting === "Bonjour" %>
+              <i class="fa fa-sun-o fa-2x" aria-hidden="true"></i>
+            <% end %>
+          </div>
+
+          <h5><%= react_to_workload %> </h5>
+
+          <p> <%= completed_tasks_percentage %> % de taches effectuées</p>
+
+
+        </div>
         <div class="card-dashboard red-background" id="stats-wiki">
-          <h5><%= Task.all.count %> tâches en cours </h5>
           <h5><%= done_tasks.count %> tâches effectuées</h5>
         </div>
-
+        <div id="dunnit">
           <% done_tasks.each do |dt| %>
           <div class="task-card d-flex justify-content-start">
-            <div class="task-card-status">
+<!--             <div class="task-card-status">
               <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-            </div>
+            </div> -->
             <div class="task-card-name d-flex justify-content-center">
               <%= dt.name %>
             </div>
             <div class="task-card-controls ml-auto p-2 ">
               <ul>
-              <%= link_to markit_url(dt), method: :put do %>
+   <!--            <%= link_to markit_url(dt), method: :put do %>
                 <% if dt.done %>
                     <i class="fa fa-check-circle red " aria-hidden="true"></i>
                 <% else %>
                     <i class="fa fa-check-circle" aria-hidden="true"></i>
-                <% end %>
+                <% end %> -->
               <% end %>
                 <%= link_to task_path(dt.id), method: :delete, data: { confirm: 'Vraiment ?' } do %>
                   <i class="fa fa-trash" aria-hidden="true"></i>
@@ -36,29 +57,29 @@
             </div>
           </div>
           <% end %>
+        </div>
+
+
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="card-dashboard blue-background">
-          <p> Nous sommes le <%= DateTime.current.strftime("%m/%d/%Y") %></p>
-          <p>Il est <%= DateTime.current.strftime("%HH%M") %></p>
-
-          <p><%= time_greeting %> </p>
-          <div class="time-visualize-icon">
-            <% if time_greeting === "Bonne nuit" %>
-              <i class="fa fa-moon-o" aria-hidden="true"></i>
-            <% end %>
-          </div>
-
-          <h5><%= react_to_workload %> </h5>
-
-          <p> <%= completed_tasks_percentage %> % de taches effectuées</p>
-
+      <p>
+          <% if ongoing_tasks.length > 1 %>
+            Vous avez <%= ongoing_tasks.length %>
+            tâches en cours
+          <% elsif ongoing_tasks.length == 1 %>
+            1 tâche en cours
+          <% else %>
+            <%= "Nib" %>
+          <% end %>
+        </p>
         </div>
+
         <% ongoing_tasks.each do |t| %>
           <div class="task-card d-flex justify-content-start">
-            <div class="task-card-status">
+<!--             <div class="task-card-status">
               <i class="fa fa-spinner" aria-hidden="true"></i>
-            </div>
+            </div> -->
             <div class="task-card-name d-flex justify-content-center">
               <%= t.name %>
             </div>
@@ -78,7 +99,11 @@
             </div>
           </div>
         <% end %>
+
+
+
       </div>
+
     </div>
   </div>
 </div>

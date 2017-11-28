@@ -1,0 +1,6 @@
+<%= simple_form_for @user, wrapper: :inline_form, html: { class: 'form-inline' }, remote: true  do |f| %>
+  <%= f.simple_fields_for :task do |p| %>
+    <%= p.input :name, placeholder: 'Doux Something ', label: false %>
+    <%= p.button :submit, 'Gooooo'  %>
+  <% end %>
+<% end %>

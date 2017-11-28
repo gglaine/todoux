@@ -15,11 +15,15 @@
 }
 
 .navbar-brand {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 300px;
   flex: 0 0 300px;
   text-align: left;
-  font-size: 32px;
-  font-family: $header-font;
-  color: $white;
+  font-size: 20px;
+  font-family:$header-font;
+  color: rgba(47, 49, 53, 0.84);
+  font-weight: bolder;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   h6 {
     margin-top: -10px;
@@ -34,15 +38,20 @@
 }
 
 .navbar-tagline {
-  font-size: 26px;
-  color: $white;
+  font-size: 20px;
+  color: rgba(94, 136, 241, 0.84);
   font-family: $header-font;
   // flex: 0 0 auto;
   flex: 0 1 650px;
 }
 
 .navbar-tagline img {
-  width: 50px;
+      font-size: 22px;
+    color: #fff;
+    font-family: "Dosis", "Montserrat", "Helvetica", "sans-serif";
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 650px;
+    flex: 0 1 650px;
 }
 
 

@@ -54,19 +54,22 @@
 
 
 .card-new-task {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-top: 20px;
-  height: 200px;
-  background-image: linear-gradient(-225deg, rgba(0, 101, 168, 0.6) 0%, rgba(0, 36, 61, -1.7)10%), url(sloth-down.png);
+  /* padding-top: 20px; */
+  height: 69px;
+  // background-image: linear-gradient(-225deg, rgba(59, 93, 115, 0.16) 0%, rgba(0, 36, 61, 0) 10%);
   background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 10px;
-  margin-top: 10px;
+  background: #30364c29;
+  /* margin-top: 10px; */
   .form-control {
-    flex: 0 1 50%;
+    flex: 0 1 100%;
   }
   .form {
      align-items: center;
@@ -75,8 +78,8 @@
   .btn {
     background: $green-button;
     border-radius: 4px;
-    width: 120px;
-    opacity: 0.8;
+    width: 80px;
+    opacity: 0.95;
     height: 39px;
     margin: 4Px;
     color: #fff;
@@ -97,7 +100,7 @@
   width: 100%;
   margin-top: 5px;
   margin-bottom: 5px;
-  background: $blue-sky;
+  background: rgba(94, 136, 241, 0.84);
   border-radius: 4px;
   opacity: 0.82;
   color: $white;
@@ -144,9 +147,8 @@
 .card-dashboard {
   position: relative;
   padding: 20px;
-  border-radius: 12px;
   color: #fdefef;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 #stats-wiki h5 {
@@ -168,5 +170,5 @@
   background: rgba(67, 148, 83, 0.84);
 }
 .red-background {
-  background: rgba(27, 29, 16, 0.84);
+  background: #da5252;
 }
