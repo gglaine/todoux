@@ -11,17 +11,19 @@ module ApplicationHelper
     end
   end
 
-  def current_weather
+
+  def my_city_weather
     require 'open_weather'
+    city_id = "2988506"
     kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
     options = { units: "metric", APPID: "#{kiki}"}
-    response = OpenWeather::Current.city_id("2988506", options)
+    response = OpenWeather::Current.city_id("#{city_id}", options)
     temperature = response["main"]
     minimales = response["main"]["temp_min"]
     maximales = response["main"]["temp_max"]
   end
 
-  def minimale
+  def min_arg
     require 'open_weather'
     kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
     options = { units: "metric", APPID: "#{kiki}"}
@@ -30,7 +32,7 @@ module ApplicationHelper
     minimale = response["main"]["temp_min"]
   end
 
-  def maximale
+  def max_arg
     require 'open_weather'
     kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
     options = { units: "metric", APPID: "#{kiki}"}
@@ -39,6 +41,28 @@ module ApplicationHelper
     maximale = response["main"]["temp_max"]
   end
 
+  def dakar_temp
+    require 'open_weather'
+    kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
+    options = { units: "metric", APPID: "#{kiki}"}
+    response = OpenWeather::Current.city_id("2253350", options)
+    maximale = response["main"]["temp_max"]
+  end
 
+  def wwa_temp
+    require 'open_weather'
+    kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
+    options = { units: "metric", APPID: "#{kiki}"}
+    response = OpenWeather::Current.city_id("6695624", options)
+    maximale = response["main"]["temp_max"]
+  end
+
+  def fdf_temp
+    require 'open_weather'
+    kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
+    options = { units: "metric", APPID: "#{kiki}"}
+    response = OpenWeather::Current.city_id("6690660", options)
+    maximale = response["main"]["temp_max"]
+  end
 
 end
