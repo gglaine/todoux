@@ -11,7 +11,6 @@ module TasksHelper
 
   def react_to_workload
     count = @tasks.count
-
     cool =  "Tout est OKLM !"
     chill = "Le repos c'est la santé !"
     naptime = "Et si on faisait une sieste !"
@@ -30,7 +29,6 @@ module TasksHelper
     tasks = @tasks.count.to_f
     complete = done_tasks.count.to_f
     percentage = (complete / tasks) * 100
-    # percentage = percentage / 100
     return percentage.to_i
   end
 

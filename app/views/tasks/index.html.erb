@@ -3,34 +3,36 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 col-md-12">
-        <div class="card card-new-task text-center">
-          <%= render "tasks/form", locals: {task: @task} %>
-        </div>
+
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-6">
         <div class="card-dashboard blue-background">
           <p> <%= DateTime.current.strftime("%m/%d/%Y") %> - <%= DateTime.current.strftime("%HH%M") %></p>
-          <div id="my_city_weather">
+          <div id="my_city_weather" class="text-center">
             <div id="current_weather">
-                  Il fait <%= my_city_weather %>°C <br>
-             <ul>
-               <li>minimale : <%= min_arg %>°C</li>
-               <li>maximale : <%= max_arg %>°C</li>
-             </ul>
+              <%= argenteuil["name"]%>
+              <ul>
+                <li><%= argenteuil["weather"][0]["description"] %></li>
+                <li><%= image_tag("http://openweathermap.org/img/w/#{argenteuil["weather"][0]["icon"]}.png") %></li>
+                <li> <h3><%= argenteuil["main"]["temp_max"] %>°C </h3></li>
+                <li> Taux d'humidité <%= argenteuil["main"]["humidity"] %> %</li>
+                <li>Vitesse du vent <%= argenteuil["wind"]["speed"].to_i %> km/h</li>
 
-            <% if "#{my_city_weather}".to_i < 10 %>
-              <div id="weather_react">
-               Brrr ... ca caille, couvre toi bien !
-              </div>
-            <% end %>
+              </ul>
+              <% if "#{argenteuil}".to_i < 10 %>
+                <div id="weather_react">
+                 Il fait un froid de canard, couvres-toi bien !
+                </div>
+              <% end %>
             </div>
           </div>
           <div id="worldweather">
-            <p>Dakar : <%= dakar_temp %> °C</p>
-            <p>Varsovie : <%= wwa_temp %> °C</p>
-            <p>Fort-de-France : <%= fdf_temp %> °C</p>
+            <h5>Autour du monde</h5>
+            <p>Dakar : <%= dakar_temp %> °C <%= image_tag("http://openweathermap.org/img/w/#{dakar["weather"][0]["icon"]}.png") %></p>
+            <p>Varsovie : <%= wwa_temp %> °C <%= image_tag("http://openweathermap.org/img/w/#{varsovie["weather"][0]["icon"]}.png") %></p>
+            <p>Fort-de-France : <%= fdf_temp %> °C <%= image_tag("http://openweathermap.org/img/w/#{fdf["weather"][0]["icon"]}.png") %></p>
           </div>
           <div class="time-visualize-icon">
             <% if time_greeting === "Bonne nuit" %>
@@ -65,6 +67,9 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-6">
+        <div class="card card-new-task text-center">
+          <%= render "tasks/form", locals: {task: @task} %>
+        </div>
         <div class="card-dashboard blue-background">
           <h5><%= react_to_workload %> </h5>
           <p>

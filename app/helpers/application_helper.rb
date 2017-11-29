@@ -1,4 +1,5 @@
 module ApplicationHelper
+  require 'open_weather'
   def time_greeting
     gday = "Bonjour"
     night = "Bonne nuit"
@@ -11,57 +12,69 @@ module ApplicationHelper
     end
   end
 
+  CITY_IDS = {
+    :paris => "2988506",
+    :argenteuil => "6457376",
+    :dakar => "2253350",
+    :fdf => "6690660",
+    :wwa =>"6695624"
+  }
 
-  def my_city_weather
-    require 'open_weather'
-    city_id = "2988506"
-    kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
-    options = { units: "metric", APPID: "#{kiki}"}
-    response = OpenWeather::Current.city_id("#{city_id}", options)
-    temperature = response["main"]
-    minimales = response["main"]["temp_min"]
-    maximales = response["main"]["temp_max"]
+  APPKEY = "#{ENV['OPEN_WEATHER_API_KEY']}"
+
+
+  def argenteuil
+    options = { units: "metric", APPID: "#{APPKEY}"}
+    response = OpenWeather::Current.city_id("#{CITY_IDS[:argenteuil]}", options)
   end
 
+  def dakar
+    options = { units: "metric", APPID: "#{APPKEY}"}
+    response = OpenWeather::Current.city_id("#{CITY_IDS[:dakar]}", options)
+  end
+
+  def varsovie
+    options = { units: "metric", APPID: "#{APPKEY}"}
+    response = OpenWeather::Current.city_id("#{CITY_IDS[:wwa]}", options)
+  end
+
+  def fdf
+    options = { units: "metric", APPID: "#{APPKEY}"}
+    response = OpenWeather::Current.city_id("#{CITY_IDS[:fdf]}", options)
+  end
+
+
   def min_arg
-    require 'open_weather'
-    kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
-    options = { units: "metric", APPID: "#{kiki}"}
+    options = { units: "metric", APPID: "#{APPKEY}"}
     response = OpenWeather::Current.city_id("2988506", options)
     temperature = response["main"]
     minimale = response["main"]["temp_min"]
   end
 
   def max_arg
-    require 'open_weather'
-    kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
-    options = { units: "metric", APPID: "#{kiki}"}
+    options = { units: "metric", APPID: "#{APPKEY}"}
     response = OpenWeather::Current.city_id("2988506", options)
     temperature = response["main"]
     maximale = response["main"]["temp_max"]
   end
 
   def dakar_temp
-    require 'open_weather'
-    kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
-    options = { units: "metric", APPID: "#{kiki}"}
-    response = OpenWeather::Current.city_id("2253350", options)
+    options = { units: "metric", APPID: "#{APPKEY}"}
+    response = OpenWeather::Current.city_id("#{CITY_IDS[:dakar]}", options)
     maximale = response["main"]["temp_max"]
   end
 
   def wwa_temp
-    require 'open_weather'
-    kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
-    options = { units: "metric", APPID: "#{kiki}"}
-    response = OpenWeather::Current.city_id("6695624", options)
+    options = { units: "metric", APPID: "#{APPKEY}"}
+    response = OpenWeather::Current.city_id("#{CITY_IDS[:wwa]}", options)
     maximale = response["main"]["temp_max"]
   end
 
   def fdf_temp
     require 'open_weather'
     kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
-    options = { units: "metric", APPID: "#{kiki}"}
-    response = OpenWeather::Current.city_id("6690660", options)
+    options = { units: "metric", APPID: "#{APPKEY}"}
+    response = OpenWeather::Current.city_id("#{CITY_IDS[:fdf]}", options)
     maximale = response["main"]["temp_max"]
   end
 
