@@ -1,5 +1,6 @@
 module ApplicationHelper
   require 'open_weather'
+
   def time_greeting
     gday = "Bonjour"
     night = "Bonne nuit"
@@ -71,11 +72,11 @@ module ApplicationHelper
   end
 
   def fdf_temp
-    require 'open_weather'
     kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
     options = { units: "metric", APPID: "#{APPKEY}"}
     response = OpenWeather::Current.city_id("#{CITY_IDS[:fdf]}", options)
     maximale = response["main"]["temp_max"]
   end
+
 
 end
