@@ -37,6 +37,8 @@ gem 'simple_form'
 
 gem 'rest-client'
 
+gem 'jquery-ui-rails', '~> 4.2.1'
+
 
 
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'

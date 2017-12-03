@@ -6,7 +6,9 @@
 #  name       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  done       :boolean
+#  done       :boolean          default(FALSE)
+#  user_id    :integer
+#  deadline   :date
 #
 
 require 'test_helper'

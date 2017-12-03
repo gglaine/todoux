@@ -107,3 +107,13 @@ left: 10px;
   padding: 20px;
   border: 1px solid rgba(0, 0, 0, 0.4);
 }
+
+.fa-calendar {
+color: red;
+}
+
+#task_deadline {
+  z-index: 99999;
+  width: 200px;
+  // display: none;
+}

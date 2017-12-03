@@ -1,8 +1,11 @@
 <%= simple_form_for :task, wrapper: :inline_form, html: { class: 'form-inline' }, remote: true do |f| %>
   <%= f.input :name, placeholder: 'Hum ... tu es sur ? ', label: false %>
+
+
+  <%= f.input :deadline , placeholder: "C'est pour quand ?" %>
+
   <div class="my-button">
     <%= f.button :submit, '(( ^ ))'  %>
-  <!--       <i class="fa fa-cloud" aria-hidden="true"></i> -->
 
   </div>
 <% end %>
