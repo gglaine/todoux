@@ -11,7 +11,8 @@
               <i class="fa fa-sun-o fa-2x" aria-hidden="true"></i>
             <% end %>
           </div>
-          <p> <%= DateTime.current.strftime("%m/%d/%Y") %> - <%= DateTime.current.strftime("%HH%M") %></p>
+          <p> <%= DateTime.current.strftime("%a %d/%m/%Y") %>
+          <br> Heure locale: <%= Time.now.strftime("%HH%M") %></p>
         </div>
         <div class="card-dashboard card-weather">
           <div id="local-weather">
