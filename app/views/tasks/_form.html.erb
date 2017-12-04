@@ -1,8 +1,8 @@
 <%= simple_form_for :task, wrapper: :inline_form, html: { class: 'form-inline' }, remote: true do |f| %>
-  <%= f.input :name, placeholder: 'Hum ... tu es sur ? ', label: false %>
+  <%= f.input :name, placeholder: 'Je dois faire ca ... ', label: false %>
 
 
-  <%= f.input :deadline , placeholder: "C'est pour quand ?" %>
+  <%= f.input :deadline , placeholder: "Date limite" %>
 
   <div class="my-button">
     <%= f.button :submit, '(( ^ ))'  %>

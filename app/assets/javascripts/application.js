@@ -18,3 +18,10 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+
+$(function() {
+  $('#worldweather').hide();
+  $('.fa-globe').click(function() {
+    $('#worldweather').slideToggle("slow");
+  })
+})

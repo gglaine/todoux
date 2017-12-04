@@ -66,7 +66,7 @@
   background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 10px;
-  background: #30364c29;
+  background: #161619;
   /* margin-top: 10px; */
   .form-control {
     flex: 0 1 100%;
@@ -110,7 +110,7 @@
 }
 
 .task-card-name {
-  padding-left: 22px;
+  padding-left: 2px;
   flex: 0 1 auto;
 }
 
@@ -147,13 +147,41 @@
 .card-dashboard {
   position: relative;
   padding: 20px;
-  color: #fdefef;
+  color: #404040;
   margin-bottom: 0px;
 }
 
-#stats-wiki h5 {
-  font-size: 14px;
+.card-time {
+      border: 2px solid #b2b3c16b;
+    border-radius: 4px;
 }
+
+.card-weather {
+  border: 2px solid #b2b3c16b;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+#ongoing-tasks-wiki {
+  background: #8EAFF0;
+  max-height: 120px;
+}
+
+#stats-wiki {
+  margin-top: 10px;
+  background: #65e495;
+  color: #6b6868;
+  max-height: 100px;
+  border-radius: 4px 4px 0px 0px;
+  ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0px;
+  }
+}
+
 
 .time-visualize-icon {
   position: absolute;

@@ -18,7 +18,9 @@ module ApplicationHelper
     :argenteuil => "6457376",
     :dakar => "2253350",
     :fdf => "6690660",
-    :wwa =>"6695624"
+    :wwa =>"6695624",
+    :montreal => "6077265",
+    :beijing => "2038349"
   }
 
   APPKEY = "#{ENV['OPEN_WEATHER_API_KEY']}"
@@ -42,6 +44,16 @@ module ApplicationHelper
   def fdf
     options = { units: "metric", APPID: "#{APPKEY}"}
     response = OpenWeather::Current.city_id("#{CITY_IDS[:fdf]}", options)
+  end
+
+  def montreal
+    options = { units: "metric", APPID: "#{APPKEY}"}
+    response = OpenWeather::Current.city_id("#{CITY_IDS[:montreal]}", options)
+  end
+
+  def beijing
+    options = { units: "metric", APPID: "#{APPKEY}"}
+    response = OpenWeather::Current.city_id("#{CITY_IDS[:beijing]}", options)
   end
 
 
@@ -75,6 +87,20 @@ module ApplicationHelper
     kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
     options = { units: "metric", APPID: "#{APPKEY}"}
     response = OpenWeather::Current.city_id("#{CITY_IDS[:fdf]}", options)
+    maximale = response["main"]["temp_max"]
+  end
+
+  def beijing_temp
+    kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
+    options = { units: "metric", APPID: "#{APPKEY}"}
+    response = OpenWeather::Current.city_id("#{CITY_IDS[:beijing]}", options)
+    maximale = response["main"]["temp_max"]
+  end
+
+    def montreal_temp
+    kiki = "#{ENV['OPEN_WEATHER_API_KEY']}"
+    options = { units: "metric", APPID: "#{APPKEY}"}
+    response = OpenWeather::Current.city_id("#{CITY_IDS[:montreal]}", options)
     maximale = response["main"]["temp_max"]
   end
 

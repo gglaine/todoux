@@ -14,6 +14,7 @@ module TasksHelper
     cool =  "Tout est OKLM !"
     chill = "Le repos c'est la santé !"
     naptime = "Et si on faisait une sieste !"
+    overload = "Surcharge de travail, tu devrais prendre du repos"
 
     case count
       when 0..5
@@ -22,6 +23,8 @@ module TasksHelper
         return chill
       when 11..15
         return naptime
+      when 16..20
+        return overload
     end
   end
 

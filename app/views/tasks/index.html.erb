@@ -2,38 +2,8 @@
 <div class="wrapper-white" id="wrapper-bamboo">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-md-12">
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <div class="card-dashboard blue-background">
-          <p> <%= DateTime.current.strftime("%m/%d/%Y") %> - <%= DateTime.current.strftime("%HH%M") %></p>
-          <div id="my_city_weather" class="text-center">
-            <div id="current_weather">
-              <%= argenteuil["name"]%>
-              <ul>
-                <li><%= argenteuil["weather"][0]["description"] %></li>
-                <li><%= image_tag("http://openweathermap.org/img/w/#{argenteuil["weather"][0]["icon"]}.png") %></li>
-                <li> <h3><%= argenteuil["main"]["temp_max"] %>°C </h3></li>
-                <li> Taux d'humidité <%= argenteuil["main"]["humidity"] %> %</li>
-                <li>Vitesse du vent <%= argenteuil["wind"]["speed"].to_i %> km/h</li>
-
-              </ul>
-              <% if "#{argenteuil}".to_i < 10 %>
-                <div id="weather_react">
-                 Il fait un froid de canard, couvres-toi bien !
-                </div>
-              <% end %>
-            </div>
-          </div>
-          <div id="worldweather">
-            <h5>Autour du monde</h5>
-            <p>Dakar : <%= dakar_temp %> °C <%= image_tag("http://openweathermap.org/img/w/#{dakar["weather"][0]["icon"]}.png") %></p>
-            <p>Varsovie : <%= wwa_temp %> °C <%= image_tag("http://openweathermap.org/img/w/#{varsovie["weather"][0]["icon"]}.png") %></p>
-            <p>Fort-de-France : <%= fdf_temp %> °C <%= image_tag("http://openweathermap.org/img/w/#{fdf["weather"][0]["icon"]}.png") %></p>
-          </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="card-dashboard card-time">
           <div class="time-visualize-icon">
             <% if time_greeting === "Bonne nuit" %>
               <i class="fa fa-moon-o" aria-hidden="true"></i>
@@ -41,10 +11,44 @@
               <i class="fa fa-sun-o fa-2x" aria-hidden="true"></i>
             <% end %>
           </div>
+          <p> <%= DateTime.current.strftime("%m/%d/%Y") %> - <%= DateTime.current.strftime("%HH%M") %></p>
         </div>
-        <div class="card-dashboard red-background" id="stats-wiki">
-          <p><%= done_tasks.count %> tâches effectuées</p>
-          <p> <%= completed_tasks_percentage %> % de taches effectuées</p>
+        <div class="card-dashboard card-weather">
+          <div id="local-weather">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+           <!--  <% argenteuil["name"]%> -->
+           <h5 class="inline">Argenteuil </h5>
+           <div class="local-weather-icon inline">
+            <%= image_tag("http://openweathermap.org/img/w/#{argenteuil["weather"][0]["icon"]}.png") %>
+           </div>
+            <ul id="local-weather-metrics">
+              <li>Humidité: <%= argenteuil["main"]["humidity"] %>%</li>
+              <li>Vent: <%= argenteuil["wind"]["speed"].to_i %>Km/h</li>
+              <li><%= argenteuil["main"]["temp_max"] %>°C</li>
+              <li> <i class="fa fa-globe" aria-hidden="true"></i></li>
+            </ul>
+
+          </div>
+          <div id="worldweather">
+
+            <ul>
+              <li>Dakar : <%= dakar_temp %> °C <%= image_tag("http://openweathermap.org/img/w/#{dakar["weather"][0]["icon"]}.png") %></li>
+              <li>Varsovie : <%= wwa_temp %> °C <%= image_tag("http://openweathermap.org/img/w/#{varsovie["weather"][0]["icon"]}.png") %></li>
+              <li>Fort-de-France : <%= fdf_temp %> °C <%= image_tag("http://openweathermap.org/img/w/#{fdf["weather"][0]["icon"]}.png") %></li>
+               <li>Montreal : <%= montreal_temp %> °C <%= image_tag("http://openweathermap.org/img/w/#{montreal["weather"][0]["icon"]}.png") %></li>
+               <li>Beijing : <%= beijing_temp %> °C <%= image_tag("http://openweathermap.org/img/w/#{beijing["weather"][0]["icon"]}.png") %></li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="card-dashboard" id="stats-wiki">
+          <h5>VALIDEES</h5>
+          <ul>
+            <li><p><%= done_tasks.count %> tâches validées</p></li>
+            <li><p><%= completed_tasks_percentage %> %</p></li>
+          </ul>
+
+
         </div>
         <div id="dunnit">
           <% done_tasks.each do |dt| %>
@@ -66,30 +70,29 @@
           <% end %>
         </div>
       </div>
-      <div class="col-xs-12 col-md-6">
+      <div class="col-xs-12 col-md-8">
+
         <div class="card card-new-task text-center">
           <%= render "tasks/form", locals: {task: @task} %>
         </div>
-        <div class="card-dashboard blue-background">
-          <h5><%= react_to_workload %> </h5>
-          <p>
+        <div class="card-dashboard " id="ongoing-tasks-wiki">
+          <h5>EN COURS</h5>
+          <h5>
             <% if ongoing_tasks.length > 1 %>
               <%= ongoing_tasks.length %>
               tâches en cours
             <% elsif ongoing_tasks.length == 1 %>
               1 tâche en cours
             <% else %>
-              <%= "Nib" %>
+              <%= "Il n'y aucune tache dans la liste" %>
             <% end %>
-          </p>
+          </h5>
+            <p>Maxime du jour : <%= react_to_workload %> </p>
         </div>
         <% ongoing_tasks.each do |t| %>
           <div class="task-card d-flex justify-content-start">
-<!--             <div class="task-card-status">
-              <i class="fa fa-spinner" aria-hidden="true"></i>
-            </div> -->
             <div class="task-card-name d-flex justify-content-center">
-              <%= t.name %> <p><%= t.deadline %></p>
+              <%= t.name %> <br><%= t.deadline %>
             </div>
             <div class="task-card-controls ml-auto p-2 ">
               <ul>
