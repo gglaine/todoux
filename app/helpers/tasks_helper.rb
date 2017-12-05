@@ -28,6 +28,7 @@ module TasksHelper
     end
   end
 
+
   def completed_tasks_percentage
     tasks = @tasks.count.to_f
     complete = done_tasks.count.to_f

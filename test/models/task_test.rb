@@ -9,6 +9,7 @@
 #  done       :boolean          default(FALSE)
 #  user_id    :integer
 #  deadline   :date
+#  priority   :integer
 #
 
 require 'test_helper'

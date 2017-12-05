@@ -1,11 +1,15 @@
 <%= simple_form_for :task, wrapper: :inline_form, html: { class: 'form-inline' }, remote: true do |f| %>
   <%= f.input :name, placeholder: 'Je dois faire ca ... ', label: false %>
 
-
-  <%= f.input :deadline , placeholder: "Date limite" %>
+  <div class="new-task-priority">
+    <%= f.input :priority, :collection => Task::PRIORITIES.sort.map {|k,v| [v,k]}, prompt: 'Priorité' %>
+  </div>
+  <div class="new-task-deadline">
+    <%= f.input :deadline , placeholder: "Date limite" %>
+  </div>
 
   <div class="my-button">
-    <%= f.button :submit, '(( ^ ))'  %>
+    <%= f.button :submit, 'Go'  %>
 
   </div>
 <% end %>

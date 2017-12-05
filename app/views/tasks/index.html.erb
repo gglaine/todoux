@@ -11,7 +11,7 @@
               <i class="fa fa-sun-o fa-2x" aria-hidden="true"></i>
             <% end %>
           </div>
-          <p> <%= DateTime.current.strftime("%a %d/%m/%Y") %>
+          <p> <%= t(DateTime.current.strftime("%A %d/%m/%Y")) %>
           <br> Heure locale: <%= Time.now.strftime("%HH%M") %></p>
         </div>
         <div class="card-dashboard card-weather">
@@ -93,7 +93,18 @@
         <% ongoing_tasks.each do |t| %>
           <div class="task-card d-flex justify-content-start">
             <div class="task-card-name d-flex justify-content-center">
-              <%= t.name %> <br><%= t.deadline %>
+              <%= t.name %> <br>
+              Echeance <%= t.deadline %> - Priorité :
+
+              <% if t.priority === 0 %>
+                Basse
+              <% elsif t.priority === 1 %>
+                Moyenne
+              <% else %>
+                Haute
+              <% end %>
+
+              <br>  Date de création : <%= (t.created_at).strftime("%d/%m") %>
             </div>
             <div class="task-card-controls ml-auto p-2 ">
               <ul>

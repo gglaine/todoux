@@ -104,5 +104,4 @@ module ApplicationHelper
     maximale = response["main"]["temp_max"]
   end
 
-
 end

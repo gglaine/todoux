@@ -9,6 +9,7 @@
 #  done       :boolean          default(FALSE)
 #  user_id    :integer
 #  deadline   :date
+#  priority   :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
