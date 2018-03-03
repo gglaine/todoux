@@ -38,6 +38,8 @@ gem 'simple_form'
 
 gem 'rest-client'
 
+gem 'rails-i18n', '5.0.3'
+
 
 
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'

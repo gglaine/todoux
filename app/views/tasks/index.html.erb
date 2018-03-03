@@ -11,6 +11,7 @@
               <i class="fa fa-sun-o fa-2x" aria-hidden="true"></i>
             <% end %>
           </div>
+          <%= l(Time.now) %>
           <p> <%= t(DateTime.current.strftime("%A %d/%m/%Y")) %>
           <br> Heure locale: <%= Time.now.strftime("%HH%M") %></p>
         </div>
