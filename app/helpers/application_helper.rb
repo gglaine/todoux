@@ -25,7 +25,6 @@ module ApplicationHelper
 
   APPKEY = "#{ENV['OPEN_WEATHER_API_KEY']}"
 
-
   def argenteuil
     options = { units: "metric", APPID: "#{APPKEY}"}
     response = OpenWeather::Current.city_id("#{CITY_IDS[:argenteuil]}", options)
